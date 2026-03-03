@@ -9,7 +9,6 @@ export const MainLayout = () => {
     <div className={cls.mainLayout}>
       <Header />
       <div className={cls.mainWrapper}>
-        <main className={cls.main}>main</main>
         <Outlet />
         <footer className={cls.footer}>
           React Question Card App | {currentYear} <br />
