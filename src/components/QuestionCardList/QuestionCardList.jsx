@@ -7,7 +7,6 @@ export const QuestionCardList = ({ cards }) => {
       {cards.map((card, index) => {
         return <QuestionCard card={card} key={index} />;
       })}
-      ;
     </div>
   );
 };
