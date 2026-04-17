@@ -2,11 +2,13 @@ import {} from "react";
 import cls from "./MainLayout.module.css";
 import { Outlet } from "react-router-dom";
 import { Header } from "../Header";
+import { ToastContainer } from "react-toastify";
 
 export const MainLayout = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className={cls.mainLayout}>
+    <>
+      <div className={cls.mainLayout}>
       <Header />
       <div className={cls.mainWrapper}>
         <Outlet />
@@ -16,5 +18,8 @@ export const MainLayout = () => {
         </footer>
       </div>
     </div>
+
+    <ToastContainer />
+    </>
   );
 };
