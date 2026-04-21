@@ -38,7 +38,7 @@ const createCardAction = async (_prevState, formData) => {
   }
 };
 
-export const AddQuestionPage = () => {
+const AddQuestionPage = () => {
   const [formState, FormAction, isPending] = useActionState(createCardAction, { clearForm: true });
   console.log(formState);
   return (
@@ -121,3 +121,5 @@ export const AddQuestionPage = () => {
     </>
   );
 };
+
+export default AddQuestionPage;
