@@ -587,18 +587,6 @@
       ],
       "level": 1,
       "completed": false
-    },
-    {
-      "id": "9b5c",
-      "question": "пфпып",
-      "answer": "ловадылпт",
-      "description": "цлаодфцлоаждф",
-      "resources": [
-        "https://www.npmjs.com/package/react-toastify",
-        " https://shafa.ua/home/osveshchenie/aksessuary/186543619-zapasnoy-plafon-dlya-lyustry-svetilnika-bra-torshera?utm_source=google&utm_medium=cpc&utm_campaign=PO_Performance_Max-home-tcpa&gad_source=1&gad_campaignid=22140292537&gbraid=0AAAAADFY-rJnqBJbj9DrNltPZBuVQUtTF&gclid=Cj0KCQjwkYLPBhC3ARIsAIyHi3TH5UY5MSjV73Fj2NAKZR8FDgQ_ihAFNNp9puvwdQ1uqtpwak7TJsQaAtQ-EALw_wcB"
-      ],
-      "level": 1,
-      "completed": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -4,6 +4,7 @@ import cls from "./AddQuestionPage.module.css";
 import { delayFn } from "../../helpers/delayFn";
 import { toast } from "react-toastify";
 import { API_URL } from "../../constants";
+import { Loader } from "../../components/Loader";
 
 const createCardAction = async (_prevState, formData) => {
   try {
@@ -11,7 +12,7 @@ const createCardAction = async (_prevState, formData) => {
     const newQuestion = Object.fromEntries(formData);
     const resources = newQuestion.resources.trim();
     const isClearForm = newQuestion.clearForm;
-    const response = await fetch(`${API_URL}/react45`, {
+    const response = await fetch(`${API_URL}/react`, {
       method: "POST",
       body: JSON.stringify({
         question: newQuestion.question,
@@ -42,6 +43,7 @@ export const AddQuestionPage = () => {
   console.log(formState);
   return (
     <>
+      {isPending && <Loader />}
       <h1 className={cls.formTitle}>Add new question</h1>
       <div className={cls.formContainer}>
         <form action={FormAction} className={cls.form}>
@@ -89,7 +91,6 @@ export const AddQuestionPage = () => {
               id="recourcesField"
               cols="30"
               rows="2"
-              required
               placeholder="пожалуйста введите ресурсы, разделенные запятой"
             ></textarea>
           </div>
@@ -114,7 +115,7 @@ export const AddQuestionPage = () => {
             />
             <span>clear form after submitting?</span>
           </label>
-          <Button>Add question</Button>
+          <Button isDisabled={isPending}>Add question</Button>
         </form>
       </div>
     </>
