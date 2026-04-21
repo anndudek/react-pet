@@ -1,16 +1,49 @@
+import { useActionState } from "react";
 import { Button } from "../../components/Button";
 import cls from "./AddQuestionPage.module.css";
+import { delayFn } from "../../helpers/delayFn";
+import { toast } from "react-toastify";
+import { API_URL } from "../../constants";
+
+const createCardAction = async (_prevState, formData) => {
+  try {
+    await delayFn();
+    const newQuestion = Object.fromEntries(formData);
+    const resources = newQuestion.resources.trim();
+    const isClearForm = newQuestion.clearForm;
+    const response = await fetch(`${API_URL}/react`, {
+      method: "POST",
+      body: JSON.stringify({
+        question: newQuestion.question,
+        answer: newQuestion.answer,
+        description: newQuestion.description,
+        resources: resources.length ? resources.split(",") : [],
+        level: Number(newQuestion.level),
+        completed: false,
+        editDate: undefined,
+      }),
+    });
+
+    const question = response.json();
+    toast.success("New question is succesfully created!");
+    return isClearForm ? {} : question;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
 
 export const AddQuestionPage = () => {
+  const [formState, FormAction, isPending] = useActionState(createCardAction, { clearForm: true });
+  console.log(formState);
   return (
     <>
       <h1 className={cls.formTitle}>Add new question</h1>
       <div className={cls.formContainer}>
-        <form action="" className={cls.form}>
+        <form action={FormAction} className={cls.form}>
           <div className={cls.formControl}>
             <label htmlFor="questionField">Question: </label>
             <textarea
-              defaultValue={"defaultValue"}
+              defaultValue={formState.question}
               name="question"
               id="questionField"
               cols="30"
@@ -22,7 +55,7 @@ export const AddQuestionPage = () => {
           <div className={cls.formControl}>
             <label htmlFor="answerField">Short Answer: </label>
             <textarea
-              defaultValue={"defaultValue"}
+              defaultValue={formState.answer}
               name="answer"
               id="answerField"
               cols="30"
@@ -34,7 +67,7 @@ export const AddQuestionPage = () => {
           <div className={cls.formControl}>
             <label htmlFor="answerField">Description: </label>
             <textarea
-              defaultValue={"defaultValue"}
+              defaultValue={formState.description}
               name="description"
               id="descriptionField"
               cols="30"
@@ -46,7 +79,7 @@ export const AddQuestionPage = () => {
           <div className={cls.formControl}>
             <label htmlFor="answerField">Resources: </label>
             <textarea
-              defaultValue={"defaultValue"}
+              defaultValue={formState.resources}
               name="resources"
               id="recourcesField"
               cols="30"
@@ -67,7 +100,13 @@ export const AddQuestionPage = () => {
           </div>
 
           <label htmlFor="cleaFormField" className={cls.clearFormControl}>
-            <input className={cls.checkbox} type="checkbox" name="clearForm" id="clearFormField" defaultValue={true} />
+            <input
+              className={cls.checkbox}
+              type="checkbox"
+              name="clearForm"
+              id="clearFormField"
+              defaultChecked={formState.clearForm}
+            />
             <span>clear form after submitting?</span>
           </label>
           <Button>Add question</Button>

@@ -564,6 +564,41 @@
       "resources": [],
       "level": 1,
       "completed": false
+    },
+    {
+      "id": "6a80",
+      "question": "Как попасть в рай?",
+      "answer": "Верить в Бога",
+      "description": "Вести праведную жизнь, верить в Бога.",
+      "resources": [
+        "https://ru.wikihow.com/%D0%BF%D0%BE%D0%BF%D0%B0%D1%81%D1%82%D1%8C-%D0%B2-%D1%80%D0%B0%D0%B9-(%D1%85%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE)",
+        " https://azbyka.ru/vopros/vozmozhno-li-obychnomu-cheloveku-popast-v-raj/"
+      ],
+      "level": 3,
+      "completed": false
+    },
+    {
+      "id": "60f6",
+      "question": "Что делать?",
+      "answer": "Что хочется",
+      "description": "Прочитать книгу, поспать, позаниматься, погулять и т.д.",
+      "resources": [
+        "https://ru.wikipedia.org/wiki/%D0%A7%D1%82%D0%BE_%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%3F_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)"
+      ],
+      "level": 1,
+      "completed": false
+    },
+    {
+      "id": "9b5c",
+      "question": "пфпып",
+      "answer": "ловадылпт",
+      "description": "цлаодфцлоаждф",
+      "resources": [
+        "https://www.npmjs.com/package/react-toastify",
+        " https://shafa.ua/home/osveshchenie/aksessuary/186543619-zapasnoy-plafon-dlya-lyustry-svetilnika-bra-torshera?utm_source=google&utm_medium=cpc&utm_campaign=PO_Performance_Max-home-tcpa&gad_source=1&gad_campaignid=22140292537&gbraid=0AAAAADFY-rJnqBJbj9DrNltPZBuVQUtTF&gclid=Cj0KCQjwkYLPBhC3ARIsAIyHi3TH5UY5MSjV73Fj2NAKZR8FDgQ_ihAFNNp9puvwdQ1uqtpwak7TJsQaAtQ-EALw_wcB"
+      ],
+      "level": 1,
+      "completed": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
