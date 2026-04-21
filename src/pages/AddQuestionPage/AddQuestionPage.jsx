@@ -11,7 +11,7 @@ const createCardAction = async (_prevState, formData) => {
     const newQuestion = Object.fromEntries(formData);
     const resources = newQuestion.resources.trim();
     const isClearForm = newQuestion.clearForm;
-    const response = await fetch(`${API_URL}/react`, {
+    const response = await fetch(`${API_URL}/react45`, {
       method: "POST",
       body: JSON.stringify({
         question: newQuestion.question,
@@ -24,11 +24,16 @@ const createCardAction = async (_prevState, formData) => {
       }),
     });
 
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+
     const question = response.json();
     toast.success("New question is succesfully created!");
     return isClearForm ? {} : question;
   } catch (error) {
     toast.error(error.message);
+    return {};
   }
 };
 
