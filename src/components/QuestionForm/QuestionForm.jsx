@@ -4,6 +4,7 @@ import cls from "./QuestionForm.module.css";
 export const QuestionForm = ({ formAction, state, isPending, submitBtnText }) => {
   return (
     <form action={formAction} className={cls.form}>
+      <input hidden name="questionId" defaultValue={state.id} />
       <div className={cls.formControl}>
         <label htmlFor="questionField">Question: </label>
         <textarea

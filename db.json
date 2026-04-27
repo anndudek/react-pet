@@ -2,7 +2,7 @@
   "react": [
     {
       "id": "1",
-      "question": "Что такое React?",
+      "question": "Что такое React?🎏",
       "answer": "React — это библиотека для создания пользовательских интерфейсов.",
       "description": "React — это JavaScript-библиотека, разработанная Facebook, которая используется для построения UI с компонентным подходом. React позволяет вам создавать пользовательские интерфейсы из отдельных частей, называемых компонентами.",
       "resources": [
@@ -10,8 +10,8 @@
         "https://react.dev/reference/react"
       ],
       "level": 1,
-      "completed": true,
-      "editDate": "03.02.2025, 19:49"
+      "completed": false,
+      "editDate": "27.04.2026, 13:25"
     },
     {
       "id": "2",
@@ -601,13 +601,14 @@
       "id": "1eca",
       "question": "Я болван?",
       "answer": "да",
-      "description": "еще какой",
+      "description": "еще какой, ,болванище, фу-фу-фу, и козлина",
       "resources": [
         "https://www.npmjs.com/package/react-toastify",
         " https://leetcode.com/studyplan/30-days-of-javascript/"
       ],
       "level": 1,
-      "completed": false
+      "completed": false,
+      "editDate": "27.04.2026, 13:23"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
