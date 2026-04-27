@@ -587,28 +587,6 @@
       ],
       "level": 1,
       "completed": false
-    },
-    {
-      "id": "1111",
-      "question": "Почему я идиот?",
-      "answer": "дурак",
-      "description": "баран, козел",
-      "resources": [],
-      "level": 1,
-      "completed": false
-    },
-    {
-      "id": "1eca",
-      "question": "Я болван?",
-      "answer": "да",
-      "description": "еще какой, ,болванище, фу-фу-фу, и козлина",
-      "resources": [
-        "https://www.npmjs.com/package/react-toastify",
-        " https://leetcode.com/studyplan/30-days-of-javascript/"
-      ],
-      "level": 1,
-      "completed": false,
-      "editDate": "27.04.2026, 13:23"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
