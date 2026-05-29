@@ -1,6 +1,7 @@
 .formTitle {
     margin: 25px auto;
     width: fit-content;
+    color: var(--text-color);
 }
 
 .formContainer {

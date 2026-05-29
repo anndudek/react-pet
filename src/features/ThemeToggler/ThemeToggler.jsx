@@ -5,19 +5,14 @@ import cls from "./ThemeToggler.module.css";
 export const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
-  const onThemeChangeHandler = (e) => {
-    console.log(e.target.checked);
-    const updatedTheme = e.target.checked !== false ? "light" : "dark";
-    console.log(updatedTheme);
-    setTheme(updatedTheme);
-
-    localStorage.setItem(THEME_STORAGE, updatedTheme);
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (
     <div className={cls.switch}>
       <label className={cls.label}>
-        <input type="checkbox" className={cls.checkbox} onChange={onThemeChangeHandler} checked={theme === "light"} />
+        <input type="checkbox" className={cls.checkbox} onChange={toggleTheme} checked={theme === "light"} />
         <span className={cls.slider}></span>
       </label>
     </div>
