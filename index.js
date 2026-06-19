@@ -1,17 +1,19 @@
-import jsonServer from 'json-server';
+import { createRequire } from 'module';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Настройка путей для ES-модулей
+const require = createRequire(import.meta.url);
+const jsonServer = require('json-server');
+
+// Настройка путей для базы данных
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// В json-server v1.0.0-beta создание инстанса теперь импортируется напрямую
-const server = jsonServer.create(); 
+const server = jsonServer.create();
 const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
 
-// Render автоматически назначит порт в переменную процесса
+// Render автоматически передает нужный порт в переменную окружения PORT
 const port = process.env.PORT || 8801;
 
 server.use(middlewares);
