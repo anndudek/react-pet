@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "json-server --watch db.json -p 8801"
+    "server": "json-server --watch db.json -p 8801",
+    "start": "json-server db.json -p 8801"
   },
   "devDependencies": {
     "json-server": "^1.0.0-beta.12"
