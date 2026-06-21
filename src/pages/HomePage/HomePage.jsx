@@ -22,7 +22,9 @@ export const HomePage = () => {
 
   const [getQuestions, isLoading, error] = useFetch(async (url) => {
     const response = await fetch(`${API_URL}/${url}`);
+    console.log(response);
     const questions = await response.json();
+    console.log(questions);
     setQuestions(questions);
   });
 
