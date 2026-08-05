@@ -25,6 +25,7 @@ export const HomePage = () => {
     console.log(response);
     const questions = await response.json();
     console.log(questions);
+    console.log("Hello");
     setQuestions(questions);
   });
 
