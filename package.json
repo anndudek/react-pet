@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "json-server --watch db.json -p 8801",
+    "server": "npx json-server --watch db.json -p 8801",
     "start": "node index.js"
   },
   "dependencies": {
